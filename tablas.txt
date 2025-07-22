@@ -1,0 +1,50 @@
+-t_sucursales:
+	id_sucursal
+	descripcion
+	dirección
+	teléfono
+
+-t_categorias
+	id_categoria
+	descripción
+
+-t_insumos:
+	id_insumo
+	codigo_ins (código interno)
+	descripción
+	id_medida
+	id_categoria
+	id_sucursal
+	status - activo/inactivo
+
+-t_medidas:
+	id_medida
+	descripción
+
+-t_pedido:
+	id_pedido
+	codigo_pedido (visible auto incrementable, ejemplo chia_0001, expr_0002, caji_0544)
+	fecha_pedido (formato 12/05/25 (dd/mm/aa)
+	id_sucursal
+	id_responsable
+	id_insumo (esto es una lista que se va agregando a la tabla t_detalles_pedidos)
+	cantidad
+	Observaciones
+	Prioridad (esto tiene que ser una lista programada en la interfaz, que sea Alta, Media y Baja)
+
+-t_detalles_pedido:
+	id_detalles_pedido
+	id_pedido
+	id_insumo
+	cantidad
+
+t_responsable:
+	id_responsable
+	nombre_responsable
+	apellido_responsable
+	tlf_responsable
+	id_sucursal(sucursal asociada)
+	activo (Si/No)
+	
+
+No se en que tabla iría el status del pedido(pendiente, procesado, enviado, entregado) y si tengo que crear una tabla para esos status...!?
