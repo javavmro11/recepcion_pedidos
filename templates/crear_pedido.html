@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de Pedido</title>
+    <link href="/static/estilos.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Formulario de Nuevo Pedido</h1>
+
+    {% if mensaje %}
+        <p class="{{ 'success' if '✅' in mensaje else 'error' }}"> {{ mensaje }} </p>
+    {% endif %}
+
+    <form method="post">
+        <label>Sucursal:</label>
+        <select name="sucursal" required>
+            <option value="chia">Artisan Chía</option>
+            <option value="express">Artisan Express</option>
+            <option value="cajica">Artisan Cajicá</option>
+        </select><br><br>
+
+        <label>Responsable:</label>
+        <select name="responsable" required>
+            {% for resp in responsables %}
+                <option value="{{ resp[0] }}">{{ resp[1] }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label>Insumo:</label>
+        <select name="insumo" required>
+            {% for ins in insumos %}
+                <option value="{{ ins[0] }}">{{ ins[1] }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label>Cantidad:</label>
+        <input type="number" name="cantidad" required><br><br>
+
+        <label>Prioridad:</label>
+        <select name="prioridad" required>
+            <option value="Alta">Alta</option>
+            <option value="Media">Media</option>
+            <option value="Baja">Baja</option>
+        </select><br><br>
+
+        <label>Fecha del Pedido:</label>
+        <input type="text" name="fecha" placeholder="dd/mm/aa" required><br><br>
+
+        <label>Observaciones:</label><br>
+        <textarea name="observaciones" rows="4" cols="50"></textarea><br><br>
+
+        <button type="submit">📦 Guardar Pedido</button>
+    </form>
+</body>
+</html>

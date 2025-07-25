@@ -8,6 +8,34 @@
 	id_categoria
 	descripción
 
+		001 - Abarrotes
+		002 - Aseo 
+		003 - Bebidas
+		004 - Botanicos para Cocteleria
+		005 - Carnicos
+		006 - Cervezas
+		007 - Desechables
+		008 - Dulces y Topings
+		009 - Empacados
+		010 - Frutas
+		011 - Gaseosas
+		012 - Granos
+		013 - Hierbas
+		014 - Hortalizas
+		015 - Lacteos
+		016 - Licores
+		017 - Oficina
+		018 - Panaderia y Granja
+		019 - Producidos
+		020 - Ultraprocesados
+		021 - Verduras
+		022 - Hongos
+		023 - Pulpas
+
+
+
+
+
 -t_insumos:
 	id_insumo
 	codigo_ins (código interno)
@@ -20,6 +48,9 @@
 -t_medidas:
 	id_medida
 	descripción
+		001 - Gr
+		002 - Ml
+		003 - Unid
 
 -t_pedido:
 	id_pedido
